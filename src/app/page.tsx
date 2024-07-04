@@ -1,14 +1,18 @@
-import Carousel from "@/components/Home/Carousel";
-import Hero from "@/components/Home/Hero";
-import VideoBg from "@/components/Home/VideoBg";
-import Image from "next/image";
+import type React from 'react';
+import Hero from '@/components/Home/Hero';
+import VideoBg from '@/components/Home/VideoBg';
+import FeaturedWork from '@/components/Home/FeaturedWork';
+import HoverImageLinks from '@/components/Home/HoverImageLinks';
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between py-24 overflow-hidden">
       <Hero />
       <VideoBg />
-      <Carousel />
+      <FeaturedWork />
+      <HoverImageLinks />
     </main>
   );
-}
+};
+
+export default Home;
