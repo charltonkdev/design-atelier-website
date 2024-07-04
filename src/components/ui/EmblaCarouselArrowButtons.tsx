@@ -8,7 +8,7 @@ import {
     useState
 } from 'react'
 import type { EmblaCarouselType } from 'embla-carousel'
-import { IoArrowBackCircleOutline, IoArrowForwardCircleOutline  } from "react-icons/io5";
+import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 
 type UsePrevNextButtonsType = {
     prevBtnDisabled: boolean
@@ -64,7 +64,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
             type="button"
             {...restProps}
         >
-            <IoArrowBackCircleOutline className='text-9xl'/>
+            <GoArrowLeft className='text-9xl'/>
             {children}
         </button>
     )
@@ -79,7 +79,7 @@ export const NextButton: React.FC<PropType> = (props) => {
             type="button"
             {...restProps}
         >
-            <IoArrowForwardCircleOutline className='text-9xl'/>
+            <GoArrowRight className='text-9xl'/>
             {children}
         </button>
     )
