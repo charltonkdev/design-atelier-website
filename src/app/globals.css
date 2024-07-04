@@ -48,3 +48,16 @@ body {
 .menuLink li:hover:after {
   transform: translateX(0);
 }
+
+/*embla Carousel*/
+.embla__controls {
+  display: flex !important;
+  width: 100%;
+  align-items: end !important;
+}
+.embla__buttons{
+  width: max-content;
+  justify-content: end;
+  display: flex;
+
+}
