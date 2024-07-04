@@ -1,6 +1,14 @@
-'use client'
+'use client';
 import { useEffect } from 'react';
+import type Player from '@vimeo/player';
 import styles from './VideoBg.module.css';
+
+// Extend the Window interface to include the Vimeo property
+declare global {
+  interface Window {
+    Vimeo: typeof Player;
+  }
+}
 
 const VideoBg = () => {
   useEffect(() => {
@@ -9,12 +17,22 @@ const VideoBg = () => {
     script.async = true;
     document.body.appendChild(script);
 
-    script.onload = () => {
-      const iframe = document.querySelector('iframe');
-      const player = new Vimeo.Player(iframe);
+    const handleScriptLoad = () => {
+      if (window.Vimeo) {
+        const iframe = document.querySelector<HTMLIFrameElement>('iframe');
+        if (iframe) {
+          const player = new window.Vimeo(iframe);
+          player.setVolume(0); // Mute the video
+          player.play(); // Play the video
+        }
+      }
+    };
 
-      player.setVolume(0); // Mute the video
-      player.play(); // Play the video
+    script.onload = handleScriptLoad;
+
+    // Cleanup function to remove the script from the DOM
+    return () => {
+      document.body.removeChild(script);
     };
   }, []);
 
@@ -22,11 +40,10 @@ const VideoBg = () => {
     <div className={styles.videoBackground}>
       <iframe
         src="https://player.vimeo.com/video/976446682?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
-        frameBorder="0"
         allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
         className={styles.iframe}
         title="herovideo"
-      ></iframe>
+      />
     </div>
   );
 };
