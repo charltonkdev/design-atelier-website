@@ -1,0 +1,20 @@
+.videoBackground {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1; /* Ensure the video is behind other content */
+  }
+  
+  .iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.78%; /* 16:9 ratio */
+    height: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Prevent interaction with the iframe */
+  }
+  

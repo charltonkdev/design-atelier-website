@@ -31,3 +31,20 @@ body {
     text-wrap: balance;
   }
 }
+
+.menuLink li {  
+  overflow: hidden;
+}
+.menuLink li:after{
+  content: '';
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+.menuLink li:hover:after {
+  transform: translateX(0);
+}
