@@ -1,7 +1,15 @@
 'use client'
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import type React from "react";
+import { useRef } from "react";
 import { MdArrowOutward } from "react-icons/md";
+
+interface LinkProps {
+  heading: string;
+  subheading: string;
+  imgSrc: string;
+  href: string;
+}
 
 export const HoverImageLinks = () => {
   return (
@@ -42,8 +50,8 @@ export const HoverImageLinks = () => {
   );
 };
 
-const Link = ({ heading, imgSrc, subheading, href }) => {
-  const ref = useRef(null);
+const Link: React.FC<LinkProps> = ({ heading, imgSrc, subheading, href }) => {
+  const ref = useRef<HTMLAnchorElement | null>(null);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -54,8 +62,9 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
   const top = useTransform(mouseYSpring, [0.5, -0.5], ["40%", "60%"]);
   const left = useTransform(mouseXSpring, [0.5, -0.5], ["60%", "70%"]);
 
-  const handleMouseMove = (e) => {
-    const rect = ref.current.getBoundingClientRect();
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const rect = ref.current?.getBoundingClientRect();
+    if (!rect) return;
 
     const width = rect.width;
     const height = rect.height;
@@ -92,7 +101,7 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
           }}
           className="relative z-10 block text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
         >
-          {heading.split("").map((l, i) => (
+          {heading.split("").map((l) => (
             <motion.span
               variants={{
                 initial: { opacity: 0.2 },
@@ -100,7 +109,7 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
               }}
               transition={{ type: "tween" }}
               className="inline-block"
-              key={i}
+              key={`${heading}-${l}-${Math.random()}`}
             >
               {l}
             </motion.span>
@@ -125,8 +134,7 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
         transition={{ type: "spring" }}
         src={imgSrc}
         className="absolute z-0 h-24 w-32 rounded-lg object-cover md:h-[calc(30vw)] md:w-[30vw]"
-        // biome-ignore lint/a11y/noRedundantAlt: <explanation>
-        alt={`Image representing a link for ${heading}`}
+        alt={`Title ${heading}`}
       />
 
       <motion.div
@@ -149,4 +157,4 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
   );
 };
 
-export default HoverImageLinks
+export default HoverImageLinks;
