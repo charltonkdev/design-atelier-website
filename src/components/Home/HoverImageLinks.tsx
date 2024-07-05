@@ -13,34 +13,35 @@ interface LinkProps {
 
 export const HoverImageLinks = () => {
   return (
-    <section className="bg-neutral-950 p-4 md:p-8 w-full h-full relative ">
+    <section className="bg-black px-12 py-24 w-full h-full relative ">
+      <h4 className="font-semibold text-xl">Services</h4>
       <div className="mx-auto w-full">
         <Link
-          heading="Product01"
+          heading="Branding"
           subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis."
           imgSrc="/work01.jpg"
           href="#"
         />
         <Link
-          heading="Product02"
+          heading="Motion graphics"
           subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis."
           imgSrc="/work02.jpg"
           href="#"
         />
         <Link
-          heading="Product03"
+          heading="Video editing"
           subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis."
           imgSrc="/work03.jpg"
           href="#"
         />
         <Link
-          heading="Product04"
+          heading="3D animation"
           subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis."
           imgSrc="/work04.jpg"
           href="#"
         />
         <Link
-          heading="Product05"
+          heading="Web design"
           subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis."
           imgSrc="/work05.jpg"
           href="#"
@@ -101,7 +102,7 @@ const Link: React.FC<LinkProps> = ({ heading, imgSrc, subheading, href }) => {
           }}
           className="relative z-10 block text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
         >
-          {heading.split("").map((l) => (
+          {heading.split('').map((l, index) => (
             <motion.span
               variants={{
                 initial: { opacity: 0.2 },
@@ -109,9 +110,9 @@ const Link: React.FC<LinkProps> = ({ heading, imgSrc, subheading, href }) => {
               }}
               transition={{ type: "tween" }}
               className="inline-block"
-              key={`${heading}-${l}-${Math.random()}`}
+              key={`${heading}-${index}`}
             >
-              {l}
+              {l === ' ' ? '\u00A0' : l}
             </motion.span>
           ))}
         </motion.span>
@@ -156,5 +157,6 @@ const Link: React.FC<LinkProps> = ({ heading, imgSrc, subheading, href }) => {
     </motion.a>
   );
 };
+
 
 export default HoverImageLinks;

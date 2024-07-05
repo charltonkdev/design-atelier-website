@@ -8,6 +8,7 @@ import '../../css/embla.css';
 interface SlideData {
   imageUrl: string;
   text: string;
+  desc: string;
 }
 
 const FeaturedWork: React.FC = () => {
@@ -20,23 +21,28 @@ const FeaturedWork: React.FC = () => {
   const SLIDES_DATA: SlideData[] = [
     {
       imageUrl: '/work01.jpg',
-      text: 'Slide 1 Text',
+      text: 'TechSavvy',
+      desc: 'Immerse yourself'
     },
     {
       imageUrl: '/work02.jpg',
-      text: 'Slide 2 Text',
+      text: 'EcoMate',
+      desc: 'Stay hydrated',
     },
     {
       imageUrl: '/work03.jpg',
-      text: 'Slide 3 Text',
+      text: 'SpeedyCharge',
+      desc: 'Fast and reliable',
     },
     {
       imageUrl: '/work04.jpg',
-      text: 'Slide 4 Text',
+      text: 'ComfortGrip',
+      desc: 'Enhance productivity',
     },
     {
       imageUrl: '/work05.jpg',
-      text: 'Slide 5 Text',
+      text: 'BrightView',
+      desc: 'lluminate your workspace',
     },
   ];
 
@@ -44,9 +50,10 @@ const FeaturedWork: React.FC = () => {
 
   const slides = SLIDES_DATA.map((slide, index) => (
     <div key={index} className="embla__slide">
-      <img src={slide.imageUrl} alt="Slide" className="w-full h-full object-cover" />
-      <div className="embla__slide__inner relative bottom-10 left-3 w-full">
-        <p className="text-white text-3xl font-bold">{slide.text}</p>
+      <img src={slide.imageUrl} alt="Slide" className="w-full h-full object-cover rounded-xl" />
+      <div className="embla__slide__inner relative pt-3 left-3 w-full">
+        <p className="text-white text-2xl font-semibold">{slide.text}</p>
+        <p className="text-neutral-500 text-lg">{slide.desc}</p>
       </div>
     </div>
   ));

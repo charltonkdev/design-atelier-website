@@ -3,6 +3,8 @@ import Hero from '@/components/Home/Hero';
 import VideoBg from '@/components/Home/VideoBg';
 import FeaturedWork from '@/components/Home/FeaturedWork';
 import HoverImageLinks from '@/components/Home/HoverImageLinks';
+import FeaturedHero from '@/components/Home/FeaturedHero';
+import About from '@/components/Home/About';
 
 const Home: React.FC = () => {
   return (
@@ -10,7 +12,9 @@ const Home: React.FC = () => {
       <Hero />
       <VideoBg />
       <FeaturedWork />
+      <FeaturedHero />
       <HoverImageLinks />
+      <About />
     </main>
   );
 };

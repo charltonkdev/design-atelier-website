@@ -6,10 +6,10 @@ export default function Hero() {
 
   return (
     <div className="flex flex-col w-full relative px-12">
-        <div className="text-7xl font-semibold text-white">
+        <div className="text-4xl md:text-7xl font-semibold text-white">
         Aesthetic Works 
          <br />
-        for everlasting <FlipWords words={words} />
+        for everlasting<FlipWords words={words} />
       </div>
     </div>
   );
