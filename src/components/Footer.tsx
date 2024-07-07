@@ -13,7 +13,7 @@ const social = () => [
 export default function Footer() {
     return (
         <footer className="relative flex flex-col w-full h-screen px-12">
-            <div className="socialFooter flex flex-col md:grid md:grid-cols-9 space-x-4 py-7 text-2xl font-semibold border-b-2 mb-7 ">
+            <div className="socialFooter flex flex-col md:flex-row justify-evenly text-2xl font-semibold border-b-2 mb-7 ">
                 {social().map((item, index) => (
                     <a key={index} href={item.link} target="_blank" rel="noopener noreferrer">
                         {item.social}

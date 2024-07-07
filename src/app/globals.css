@@ -165,15 +165,6 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .socialFooter a{
-    text-align: center;
-  }
-  .socialFooter a:first-child {
-    text-align: left;
-  }
-  .socialFooter a:last-child {
-    text-align: right;
-  }
   .para-two {
     column-count: 2;
     column-gap: 1rem;
