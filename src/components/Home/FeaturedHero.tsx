@@ -3,13 +3,13 @@ import React from 'react'
 const FeaturedHero = () => {
     return (
         <div className="relative flex flex-col w-full h-[50vh] md:h-screen px-12 py-24 my-32 items-stretch justify-between overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-[50vh] md:h-full overflow-hidden z-0">
+            <div className="absolute top-0 left-0 w-full h-[50vh] md:h-full rounded-3xl overflow-hidden z-0">
                 <iframe
                     title="videobg"
                     src="https://player.vimeo.com/video/977868150?background=1&autoplay=1&loop=1&byline=0&title=0"
                     allow="autoplay; fullscreen"
                     allowFullScreen
-                    className="absolute top-0 left-0 w-full h-[50vh] md:h-full"
+                    className="absolute relataive top-0 w-full h-[70vh] md:h-full"
                     style={{ objectFit: 'cover' }}
                 />
             </div>
