@@ -14,30 +14,30 @@ interface LinkProps {
 export const HoverImageLinks = () => {
   return (
     <section className="bg-black px-12 py-24 w-full h-full relative ">
-      <h4 className="font-semibold text-xl">Services</h4>
+      <h4 className="font-semibold text-3xl">Services</h4>
       <div className="mx-auto w-full">
         <Link
           heading="Branding"
           subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis."
-          imgSrc="/work01.jpg"
+          imgSrc="/work06.jpg"
           href="#"
         />
         <Link
           heading="Motion graphics"
           subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis."
-          imgSrc="/work02.jpg"
+          imgSrc="/work07.jpg"
           href="#"
         />
         <Link
           heading="Video editing"
           subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis."
-          imgSrc="/work03.jpg"
+          imgSrc="/work08.jpg"
           href="#"
         />
         <Link
           heading="3D animation"
           subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mattis."
-          imgSrc="/work04.jpg"
+          imgSrc="/work09.jpg"
           href="#"
         />
         <Link

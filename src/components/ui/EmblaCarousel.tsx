@@ -22,7 +22,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   return (
     <section className="embla">
       <div className="embla__controls w-full px-6 py-12">
-        <h1 className="text-6xl font-semibold">Featured Work</h1>
+        <h1 className="text-3xl font-semibold">Featured Work</h1>
         <div className="embla__buttons">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />

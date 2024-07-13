@@ -44,6 +44,26 @@ const FeaturedWork: React.FC = () => {
       text: 'BrightView',
       desc: 'lluminate your workspace',
     },
+    {
+      imageUrl: '/work06.jpg',
+      text: 'Futuristic Footwear',
+      desc: 'Cutting-Edge Sneaker Design',
+    },
+    {
+      imageUrl: '/work07.jpg',
+      text: 'Sleek Workstations',
+      desc: 'Enhancing Productivity',
+    },
+    {
+      imageUrl: '/work08.jpg',
+      text: 'Smart Accessories',
+      desc: 'Integrating Tech with Style',
+    },
+    {
+      imageUrl: '/work09.jpg',
+      text: 'Interactive Retail',
+      desc: 'Tech-Driven Shoe Store',
+    },
   ];
 
   const OPTIONS: EmblaOptionsType = { align: 'start' };
