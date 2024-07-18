@@ -1,4 +1,6 @@
 import type React from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import Hero from '@/components/Home/Hero';
 import VideoBg from '@/components/Home/VideoBg';
 import FeaturedWork from '@/components/Home/FeaturedWork';
@@ -8,13 +10,15 @@ import About from '@/components/Home/About';
 
 const Home: React.FC = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between py-24 overflow-hidden">
+    <main className="relative flex h-full flex-col items-center justify-between pt-24 overflow-hidden">
+      <Header />
       <Hero />
       <VideoBg />
       <FeaturedWork />
       <FeaturedHero />
       <HoverImageLinks />
       <About />
+      <Footer />
     </main>
   );
 };

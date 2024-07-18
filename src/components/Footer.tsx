@@ -7,15 +7,14 @@ const social = () => [
     { social: "YouTube", link: "https://www.youtube.com" },
     { social: "Vimeo", link: "https://www.vimeo.com" },
     { social: "Pinterest", link: "https://www.pinterest.com" },
-    { social: "LinkedIn", link: "https://www.linkedin.com" }
 ];
 
-export default function Footer() {
+export default function Footer() {    
     return (
-        <footer className="relative flex flex-col w-full h-screen px-12">
-            <div className="socialFooter grid grid-cols-2 md:flex md:flex-row justify-between text-2xl font-semibold border-b-2 pb-7 mb-7 gap-12 ">
+        <footer className="relative flex flex-col w-full justify-end px-12 mt-24">
+            <div className="socialFooter grid grid-cols-2 md:grid-cols-4 lg:flex lg:flex-row flex-wrap w-full justify-between font-semibold border-b-2 pb-7 mb-7 gap-12 ">
                 {social().map((item, index) => (
-                    <a key={index} href={item.link} target="_blank" rel="noopener noreferrer">
+                    <a key={item.social} href={item.link} target="_blank" rel="noopener noreferrer">
                         {item.social}
                     </a>
                 ))}
@@ -33,7 +32,9 @@ export default function Footer() {
                     </ul>
                 </div>
             </div>
-            <span className="text-[calc(25vw)] font-semibold">Footer<sub className="text-xl">&copy;</sub></span>
+            <span className="block text-[calc(30vw)] font-semibold leading-[0.5em] pt-24 -ml-12">
+                Footer<sub className="text-xl align-baseline">&copy;</sub>
+            </span>
         </footer>
     );
 }

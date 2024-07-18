@@ -69,7 +69,7 @@ const FeaturedWork: React.FC = () => {
   const OPTIONS: EmblaOptionsType = { align: 'start' };
 
   const slides = SLIDES_DATA.map((slide, index) => (
-    <div key={index} className="embla__slide">
+    <div key={slide.text} className="embla__slide">
       <img src={slide.imageUrl} alt="Slide" className="w-full h-full object-cover rounded-xl" />
       <div className="embla__slide__inner relative pt-3 left-3 w-full">
         <p className="text-white text-2xl font-semibold">{slide.text}</p>
